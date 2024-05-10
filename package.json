@@ -1,0 +1,12 @@
+{
+  "name": "task-react",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "api": "npm start --prefix api",
+    "web": "npm start --prefix web",
+    "test": "npm test --prefix web"
+  },
+  "author": "",
+  "license": "ISC"
+}

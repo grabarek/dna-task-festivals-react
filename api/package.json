@@ -1,0 +1,16 @@
+{
+  "name": "task-react",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@types/node": "^16.18.96",
+    "tsx": "^4.9.3",
+    "typescript": "^4.9.5"
+  },
+  "devDependencies": {
+    "prettier": "^3.2.5"
+  },
+  "scripts": {
+    "start": "tsx src/server.ts"
+  }
+}

@@ -1,0 +1,19 @@
+
+.app {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+.screen {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    max-width: 1000px;
+    width: 100vw;
+    height: 100vh;
+    max-height: 800px;
+    padding: 18px;
+}
