@@ -1,0 +1,39 @@
+.navbar {
+    max-width: 400px;
+    position: fixed;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    top: 0;
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 1.5rem;
+    box-shadow: 0px 2px 12px 0px rgba(58, 48, 242, 0.25);
+}
+
+.navbar__logo {
+    display: block;
+    width: auto;
+    height: 2rem;
+    max-width: 3rem;
+    object-fit: contain;
+    object-position: center;
+}
+
+.navbar__burger {
+    width: 1.75rem;
+    height: 1.15rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    cursor: pointer;
+  }
+  
+.navbar__burger-line {
+width: 100%;
+height: 2px;
+background-color: #333;
+}

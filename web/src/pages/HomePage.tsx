@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import QrCode from "qrcode";
 import { navigate, useStoreDispatch } from "../store";
-import { Screen } from "../components";
+import { Screen } from "../components/Screen/Screen";
+import { ButtonVariant } from "../components/Button/Button";
 import { useIsUserLoggedIn } from "../hooks";
 import "./HomePage.css";
 
@@ -29,8 +30,16 @@ export const HomePage = () => {
   }
 
   const actions = [
-    { label: "top up", callback: () => dispatch(navigate("/top-up")) },
-    { label: "logout", callback: () => dispatch(navigate("/")) },
+    { 
+      label: "top up", 
+      callback: () => dispatch(navigate("/top-up")),
+      variant: ButtonVariant.PRIMARY
+     },
+    { 
+      label: "logout",
+      callback: () => dispatch(navigate("/")),
+      variant: ButtonVariant.SECONDARY
+    },
   ];
 
   const balance = user.balance.toFixed(2);
@@ -40,7 +49,7 @@ export const HomePage = () => {
       title="Home"
       content={
         <div>
-          <p>Your account balance: {balance}</p>
+          <p>Your account balance: <b>{balance}</b></p>
           <p>Your QR code</p>
           {qrCode && <img src={qrCode} alt="QR code" className="qr" />}
         </div>

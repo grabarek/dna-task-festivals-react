@@ -1,0 +1,28 @@
+.form {
+    margin: 2rem auto 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 80%;
+}
+  
+.form input {
+    padding: 0.85rem 1.25rem;
+    background-color: --var(background-color-white);
+    border: 1px solid var(--background-color-primary);
+    color: var(--font-color-primary);
+    border-radius: 4px;
+    font-size: 1.1rem;
+    width: 100%;
+    margin: 0.2rem 0 1rem;
+    text-align: center;
+    transition: color 0.25s ease-in-out;
+}
+
+form input:focus {
+    color: var(--font-color-secondary);
+}
+
+.form input::placeholder {
+    opacity: 0.75;
+}

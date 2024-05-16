@@ -1,7 +1,9 @@
 import { useMemo, useState } from "react";
 import { navigate, setUser, useStoreDispatch } from "../store";
-import { Error, Screen } from "../components";
+import { Error } from "../components/Error/Error";
+import { Screen } from "../components/Screen/Screen";
 import { login } from "../api";
+import { ButtonVariant } from "../components/Button/Button";
 
 export const LoginPage = () => {
   const [email, setEmail] = useState("");
@@ -23,6 +25,11 @@ export const LoginPage = () => {
           }
         },
       },
+      {
+        label: "don't have an account yet?",
+        callback: () => dispatch(navigate("/register")),
+        variant: ButtonVariant.EXTRA
+      }
     ],
     [email, password],
   );

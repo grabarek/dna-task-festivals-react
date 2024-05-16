@@ -1,0 +1,9 @@
+.image {
+    display: block;
+    width: 225px;
+    height: auto;
+}
+
+.image--fullwidth {
+    width: 100%;
+}

@@ -1,6 +1,8 @@
 import { useMemo, useState } from "react";
 import { navigate, setUser, useStoreDispatch } from "../store";
-import { Error, Screen } from "../components";
+import { Error } from "../components/Error/Error";
+import { Screen } from "../components/Screen/Screen";
+import { ButtonVariant } from "../components/Button/Button";
 import { register } from "../api";
 
 export const RegistrationPage = () => {
@@ -22,7 +24,13 @@ export const RegistrationPage = () => {
             setError(String(e));
           }
         },
+        variant: ButtonVariant.PRIMARY,
       },
+      {
+        label: "already have an account?",
+        callback: () => dispatch(navigate("/login")),
+        variant: ButtonVariant.EXTRA
+      }
     ],
     [email, password],
   );

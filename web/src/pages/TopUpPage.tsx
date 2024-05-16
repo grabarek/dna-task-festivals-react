@@ -1,6 +1,8 @@
 import { useMemo, useState } from "react";
 import { navigate, updateBalance, useStoreDispatch } from "../store";
-import { Error, Screen } from "../components";
+import { Error } from "../components/Error/Error";
+import { Screen } from "../components/Screen/Screen";
+import { ButtonVariant } from "../components/Button/Button";
 import { useIsUserLoggedIn } from "../hooks";
 import { topUp } from "../api";
 
@@ -32,6 +34,7 @@ export const TopUpPage = () => {
         callback: () => {
           dispatch(navigate("/home"));
         },
+        variant: ButtonVariant.SECONDARY,
       },
     ],
     [user, amount],
@@ -43,7 +46,7 @@ export const TopUpPage = () => {
 
   return (
     <Screen
-      title="top up"
+      title="Top up your account"
       content={
         <>
           <form className="form">

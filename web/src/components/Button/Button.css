@@ -1,0 +1,29 @@
+.button {
+    display: inline-block;
+    padding: 1rem 1rem;
+    white-space: nowrap;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 1rem;
+    font-family: var(--font-family-secondary);
+    font-weight: var(--font-weight-medium);
+    letter-spacing: 1px;
+}
+
+.button--primary {
+    background-color: var(--background-color-primary);
+    border: 1px solid var(--background-color-primary);
+    color: var(--font-color-white);
+}
+
+.button--secondary {
+    background-color: var(--background-color-white);
+    border: 1px solid var(--background-color-primary);
+    color: var(--font-color-secondary);
+}
+
+.button--extra {
+    background-color: transparent;
+    border: none;
+    font-size: 0.75rem;
+}

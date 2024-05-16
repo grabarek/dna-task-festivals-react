@@ -1,5 +1,5 @@
 import { navigate, useStoreDispatch } from "../store";
-import { Screen } from "../components";
+import { Screen } from "../components/Screen/Screen";
 
 export const ErrorPage = () => {
   const dispatch = useStoreDispatch();

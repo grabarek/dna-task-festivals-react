@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { onBrowserEvent, useStoreDispatch } from "./store";
+import { Navbar } from "./components/Navbar/Navbar";
 import { Page } from "./pages";
-import "./App.css";
 
 export const App = () => {
   const dispatch = useStoreDispatch();
@@ -18,9 +18,8 @@ export const App = () => {
 
   return (
     <div className="app">
-      <div className="screen">
+        <Navbar />
         <Page />
-      </div>
     </div>
   );
 };

@@ -1,0 +1,15 @@
+:root {
+    --font-family-primary: 'Roboto', 'sans-serif';
+    --font-family-secondary: 'Inter', 'sans-serif';
+    --font-weight-regular: 400;
+    --font-weight-medium: 500;
+    --font-weight-bold: 700;
+    --font-color-primary: #333;
+    --font-color-secondary: #3a30f2;
+    --font-color-white: #fff;
+    
+    --background-color-primary: #3a30f2;
+    --background-color-secondary: #6c63ff;
+    --background-color-white: #fff;
+  }
+  

@@ -4,7 +4,12 @@ import { Provider } from "react-redux";
 import reportWebVitals from "./reportWebVitals";
 import { App } from "./App";
 import { store } from "./store";
-import "./index.css";
+
+import "./styles/global.css";
+import "./styles/form.css";
+import "./styles/variables.css";
+import "./styles/fonts.css";
+import "./styles/typography.css";
 
 const root = ReactDOM.createRoot(
   document.getElementById("root") as HTMLElement,
