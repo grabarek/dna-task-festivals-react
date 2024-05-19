@@ -6,7 +6,7 @@ export interface UserState {
 }
 
 const initialState: UserState = {
-  data: undefined,
+  data: JSON.parse(localStorage.getItem('user') || 'null'),
 };
 
 export const userSlice = createSlice({
@@ -15,6 +15,11 @@ export const userSlice = createSlice({
   reducers: {
     setUser: (state, action: PayloadAction<User>) => {
       state.data = action.payload;
+      localStorage.setItem('user', JSON.stringify(action.payload));
+    },
+    logout: (state) => {
+      state.data = undefined;
+      localStorage.removeItem('user'); 
     },
     updateBalance: (state, action: PayloadAction<number>) => {
       if (state.data) {
@@ -25,6 +30,6 @@ export const userSlice = createSlice({
 });
 
 // Action creators are generated for each case reducer function
-export const { setUser, updateBalance } = userSlice.actions;
+export const { setUser, logout, updateBalance } = userSlice.actions;
 
 export default userSlice.reducer;

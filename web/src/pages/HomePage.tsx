@@ -1,13 +1,12 @@
 import { useEffect, useState } from "react";
 import QrCode from "qrcode";
-import { navigate, useStoreDispatch } from "../store";
+import { navigate, useStoreSelector, useStoreDispatch, logout } from "../store";
 import { Screen } from "../components/Screen/Screen";
 import { ButtonVariant } from "../components/Button/Button";
-import { useIsUserLoggedIn } from "../hooks";
 import "./HomePage.css";
 
 export const HomePage = () => {
-  const user = useIsUserLoggedIn();
+  const user = useStoreSelector((store) => store.user.data);
   const dispatch = useStoreDispatch();
   const [qrCode, setQrCode] = useState<string>();
 
@@ -37,7 +36,7 @@ export const HomePage = () => {
      },
     { 
       label: "logout",
-      callback: () => dispatch(navigate("/")),
+      callback: () => dispatch(logout()),
       variant: ButtonVariant.SECONDARY
     },
   ];

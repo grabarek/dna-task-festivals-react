@@ -18,7 +18,7 @@ Simple vanilla Node.js backend server for REST API. Runs on `http://localhost:80
 
   Request: `{ email: string, password: string }`
 
-  Response: `{ id: string, email: string, balance: number }`
+  Response: `{ id: string, email: string, balance: number, isOnboarded: boolean }`
 
   Error: `{ error: string }`
 
@@ -26,11 +26,19 @@ Simple vanilla Node.js backend server for REST API. Runs on `http://localhost:80
 
   Request: `{ email: string, password: string }`
 
-  Response: `{ id: string, email: string, balance: number }`
+  Response: `{ id: string, email: string, balance: number, isOnboarded: boolean }`
 
   Error: `{ error: string }`
 
-- `/users/acount/top-up`
+- `/users/account/onboard` POST
+
+  Request: `{ userId: string }`
+
+  Response: `{ id: string, email: string, balance: number, isOnboarded: boolean}`
+
+  Error: `{ error: string }`
+
+- `/users/account/top-up`
 
   Request: `{ userId: string, amount: number }`
 
@@ -50,7 +58,7 @@ Contains TypeScript type definitions shared by web and api.
 
 
 ## TO DO:
-- onboarding process
+- onboarding process further development
 - adapt desktop version and overall RWD
 - add variables/mixins for breakpoints
 - add linter and prettier

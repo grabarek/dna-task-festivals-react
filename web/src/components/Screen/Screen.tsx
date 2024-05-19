@@ -7,6 +7,7 @@ import "./Screen.css";
 interface Action {
   label: string;
   callback: () => void;
+  disabled?: boolean;
   variant?: ButtonVariant;
 }
 
@@ -30,6 +31,7 @@ export const Screen = ({title, content, actions}: ScreenProps) => {
               label={action.label}
               callback={action.callback}
               variant={action.variant || ButtonVariant.PRIMARY}
+              disabled={action.disabled}
             />
           );
         })}

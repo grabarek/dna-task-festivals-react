@@ -40,6 +40,9 @@ async function requestListener(
     } else if (url.pathname === "/users/login" && method === "POST") {
       const body = await getBody(req);
       result = userLogin(body);
+    } else if (url.pathname === "/users/account/onboard" && method === "POST") {
+      const body = await getBody(req);
+      result = userOnboard(body);
     } else if (url.pathname === "/users/account/top-up" && method === "POST") {
       const body = await getBody(req);
       result = userAccountTopUp(body);
@@ -108,6 +111,7 @@ function userRegister(data: Data): Result {
     email: data.email,
     password: data.password,
     balance: 0,
+    isOnboarded: false
   };
 
   USERS.push(user);
@@ -142,6 +146,34 @@ function userLogin(data: Data): Result {
 
   return { status: 200, body: { ...user, password: undefined }, headers: {} };
 }
+
+function userOnboard(data: Data): Result {
+  if (
+    !data.userId ||
+    typeof data.userId !== "string"
+  ) {
+    return {
+      status: 400,
+      body: { error: "Invalid request" },
+      headers: {},
+    };
+  }
+
+  const user = USERS.find((it) => it.id === data.userId);
+
+  if (!user) {
+    return {
+      status: 404,
+      body: { error: "Given user does not exist" },
+      headers: {},
+    };
+  }
+
+  user.isOnboarded = true;
+
+  return { status: 200, body: { ...user, password: undefined }, headers: {} };
+}
+
 
 function userAccountTopUp(data: Data): Result {
   if (

@@ -1,13 +1,12 @@
 import { useMemo, useState } from "react";
-import { navigate, updateBalance, useStoreDispatch } from "../store";
+import { navigate, updateBalance, useStoreSelector, useStoreDispatch } from "../store";
 import { Error } from "../components/Error/Error";
 import { Screen } from "../components/Screen/Screen";
 import { ButtonVariant } from "../components/Button/Button";
-import { useIsUserLoggedIn } from "../hooks";
 import { topUp } from "../api";
 
 export const TopUpPage = () => {
-  const user = useIsUserLoggedIn();
+  const user = useStoreSelector((store) => store.user.data);
   const [amount, setAmount] = useState(10);
   const [error, setError] = useState<string>();
   const dispatch = useStoreDispatch();

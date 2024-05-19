@@ -3,10 +3,12 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 export const PAGES = {
   LANDING: "landing",
   LOGIN: "login",
+  ONBOARDING: "onboarding",
   REGISTER: "register",
   HOME: "home",
   TOP_UP: "top-up",
   ERROR: "error",
+  LOGOUT: "logout",
 } as const;
 
 export type Page = (typeof PAGES)[keyof typeof PAGES];
@@ -18,8 +20,11 @@ const ROUTING = {
   "/sign-up": PAGES.REGISTER,
   "/login": PAGES.LOGIN,
   "/sign-in": PAGES.LOGIN,
+  "/onboarding": PAGES.ONBOARDING,
   "/home": PAGES.HOME,
   "/top-up": PAGES.TOP_UP,
+  "/logout": PAGES.LOGOUT,
+  "/sign-out": PAGES.LOGOUT,
 } satisfies Record<string, Page>;
 
 export type Route = keyof typeof ROUTING;
